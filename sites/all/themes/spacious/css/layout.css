@@ -18,6 +18,75 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.margin0,
+.block-block p {
+  margin: 0
+}
+
+.padding0 {
+  padding: 0;
+}
+
+.paddingtop1 {
+  padding-top: 1em;
+}
+
+.paddingbottom1 {
+  padding-bottom: 1em;
+}
+
+.margintop1 {
+  margin-top: 1em;
+}
+
+.marginbottom1 {
+  margin-bottom: 1em;
+}
+
+.floatr {
+  float: right;
+}
+
+.floatl {
+  float: left;
+}
+
+.margin0auto {
+  margin: 0 auto;
+}
+
+.displayn {
+  display: none;
+}
+
+.displayb {
+  display: block;
+}
+
+.displayinb {
+  display: inline-block;
+}
+
+.width100 {
+  width: 100%;
+}
+
+.width30 {
+  width: 30%;
+}
+
+.width68 {
+  width: 68%;
+}
+
+#sidebar-first {
+  margin-right: 1.5em;
+}
+
+#content {
+  
+}
+
 .glyphicon:empty {
   width: 1em;
 }
@@ -841,6 +910,11 @@ a {
   text-decoration: none;
 }
 
+body a.active {
+  color: #0FBE7C;
+  font-weight: bold;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -1241,8 +1315,24 @@ input[type="radio"]:checked + label:after {
   opacity: 1;
 }
 
-.field-type-taxonomy-term-reference .field-label, .field-type-taxonomy-term-reference .field-items {
-  display: inline-block;
+.field-type-taxonomy-term-reference .field-label,
+.field-type-taxonomy-term-reference .field-items,
+.field-type-taxonomy-term-reference .field-items .field-item {
+  float: left;
+}
+
+.field-type-taxonomy-term-reference .field-items .field-item,
+.field-type-taxonomy-term-reference .field-label {
+  margin-right: 0.3em;
+}
+
+.field-type-taxonomy-term-reference .field-items .field-item:after {
+  content: ",";
+  color: #0FBE7C;
+}
+
+.field-type-taxonomy-term-reference .field-items .field-item:last-child:after {
+  content: "";
 }
 
 .field-type-taxonomy-term-reference .field-label {
@@ -1260,8 +1350,13 @@ input[type="radio"]:checked + label:after {
   padding: 20px 40px 20px;
 }
 
+.node-page footer {
+  border-bottom: 2px solid #F5F5F5;
+}
+
 .node-teaser header {
   padding: 0px 40px 0px;
+  margin-bottom: 1em;
 }
 
 .node-teaser .content {
@@ -1274,9 +1369,16 @@ input[type="radio"]:checked + label:after {
   width: 100%;
 }
 
+.sidebar,
+.page-node #content {
+  padding: 0 1.3em 1em;
+}
+
 .node.node-teaser,
 .page-node- #content-wrapper,
-.page-contact #content-wrapper {
+.page-contact #content-wrapper,
+.sidebar,
+.page-node #content {
   background-color: #fcfcfc;
   border: 1px solid #eaeaea;
   margin-bottom: 30px;
@@ -1285,7 +1387,8 @@ input[type="radio"]:checked + label:after {
   border-radius: 6px;
 }
 
-.node h2 {
+.node h2,
+.block h2 {
   padding-bottom: 0;
   margin-bottom: 0.5em;
 }
@@ -1404,6 +1507,9 @@ ul.primary li a {
 
 .navigation ul.links {
   padding: 0;
+  margin: 1em 0 0;
+  display: inline-block;
+  width: 100%;
 }
 
 .comment {
@@ -1477,13 +1583,13 @@ ul.primary li a {
   margin: 1em 0 1em 1em;
 }
 
-.block-system {
+/*.block-system {
   margin-top: 1.5em;
-}
+}*/
 
 #search-block-form {
   position: relative;
-  margin: 1em 0;
+  /*margin: 1em 0;*/
 }
 
 #search-block-form .form-type-textfield input,
@@ -1520,3 +1626,82 @@ fieldset legend {
 fieldset .fieldset-legend {
   padding-left: 1.5em !important;
 }
+
+ul.menu li,
+.secnav_logout,
+.secnav_account {
+  list-style: none;
+}
+
+ul.menu li:before {
+  content: "\e092";
+  font-family: 'Glyphicons';
+  font-size: 0.6em;
+  margin-right: 0.8em;
+}
+
+#logo {
+  width: auto;
+  height: 100px;
+}
+
+#logo img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+#site-name {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#name-and-slogan {
+  margin-left: 1.5em;
+}
+
+.region-header {
+  clear: both;
+  width: 100%;
+  float: left;
+}
+
+.block-search {
+  float: left;
+  width: 100%;
+  margin-top: 1em;
+}
+
+.block-menu,
+.content,
+.block {
+  display: inline-block;
+  width: 100%;
+}
+
+.region-content .block-search {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.secnav_account,
+.secnav_logout {
+  float: left;
+  margin-right: 1em;
+}
+
+.secnav_logout:before,
+.secnav_account:before {
+  content: "\e163";
+  margin-right: 0.6em;
+  font-family: 'Glyphicons';
+}
+
+.secnav_account:before {
+  content: "\e008";
+}
+
+.tabs {
+  margin-bottom: 1em;
+}
+
