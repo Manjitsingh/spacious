@@ -97,11 +97,9 @@
 
         <?php if ($site_name): ?>
           <?php if ($title): ?>
-            <div id="site-name">
-              <strong>
+            <h1 id="site-name">
                 <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
-              </strong>
-            </div>
+            </h1>
           <?php else: /* Use h1 when the content title is empty */ ?>
             <h1 id="site-name">
               <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
@@ -179,9 +177,16 @@
         <?php print render($page['sidebar_first']); ?>
       </div></div> <!-- /.section, /#sidebar-first -->
     <?php endif; ?>
-
+    <div class="help-wrapper displayinb width68 floatr">
+      <?php print render($page['help']); ?>
+    </div>
+    <?php if ($page['highlighted']): ?>
+      <div id="highlighted" class="highlighted-wrapper displayinb width68 floatr">
+        <?php print render($page['highlighted']); ?>
+      </div>
+    <?php endif; ?>
     <div id="content" class="column displayinb width68 floatr"><div class="section">
-      <?php if ($page['highlighted']): ?><div id="highlighted"><?php print render($page['highlighted']); ?></div><?php endif; ?>
+      
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
@@ -190,12 +195,9 @@
         </h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
-      <?php if ($tabs): ?>
-        <div class="tabs">
+      <?php if (!empty($tabs)): ?>
           <?php print render($tabs); ?>
-        </div>
       <?php endif; ?>
-      <?php print render($page['help']); ?>
       <?php if ($action_links): ?>
         <ul class="action-links">
           <?php print render($action_links); ?>
@@ -214,14 +216,16 @@
 
   </div></div> <!-- /#main, /#main-wrapper -->
 
-  <div id="footer-wrapper"><div class="section">
+</div></div> <!-- /#page, /#page-wrapper -->
+<div id="footer-wrapper">
+  <div class="section">
 
     <?php if ($page['footer_firstcolumn'] || $page['footer_secondcolumn'] || $page['footer_thirdcolumn'] || $page['footer_fourthcolumn']): ?>
-      <div id="footer-columns" class="clearfix">
-        <?php print render($page['footer_firstcolumn']); ?>
-        <?php print render($page['footer_secondcolumn']); ?>
-        <?php print render($page['footer_thirdcolumn']); ?>
-        <?php print render($page['footer_fourthcolumn']); ?>
+      <div id="footer-columns" class="clearfix width100">
+        <div class="footer-columns footer_firstcolumn_wrapper width24 floatl"><?php print render($page['footer_firstcolumn']); ?></div>
+        <div class="footer-columns footer_secondcolumn_wrapper width24 floatl"><?php print render($page['footer_secondcolumn']); ?></div>
+        <div class="footer-columns footer_thirdcolumn_wrapper width24 floatl"><?php print render($page['footer_thirdcolumn']); ?></div>
+        <div class="footer-columns footer_fourthcolumn_wrapper width24 floatl"><?php print render($page['footer_fourthcolumn']); ?></div>
       </div> <!-- /#footer-columns -->
     <?php endif; ?>
 
@@ -231,6 +235,5 @@
       </div> <!-- /#footer -->
     <?php endif; ?>
 
-  </div></div> <!-- /.section, /#footer-wrapper -->
-
-</div></div> <!-- /#page, /#page-wrapper -->
+  </div><!-- /.section -->
+</div> <!-- /#footer-wrapper -->
