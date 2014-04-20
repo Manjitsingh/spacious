@@ -993,8 +993,12 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 
 label + [type="text"], label + [type="text"],
 label + [type="text"], label + [type="password"],
-.resizable-textarea textarea {
+.resizable-textarea textarea, label + select, label + select + .sbHolder {
   margin: 0.8em 0;
+}
+
+label + select + .sbHolder {
+  margin-bottom: 0;
 }
 
 input[type="reset"], input[type="button"], input[type="submit"], button, #edit-cancel {
@@ -1692,9 +1696,7 @@ fieldset .fieldset-legend {
   padding-left: 1.5em !important;
 }
 
-ul.menu li,
-.secnav_logout,
-.secnav_account {
+ul.menu li {
   list-style: none;
 }
 
@@ -1757,13 +1759,13 @@ ul.menu li:before {
 
 .secnav_logout:before,
 .secnav_account:before {
-  content: "\e163";
+  content: "\e163" !important;
   margin-right: 0.6em;
   font-family: 'Glyphicons';
 }
 
 .secnav_account:before {
-  content: "\e008";
+  content: "\e008" !important;
 }
 
 ul.tabs {
@@ -1891,4 +1893,21 @@ ul.pager li.pager-first a:hover,
   margin-bottom: 1em;
   display: inline-block;
   width: 100%;
+}
+
+#secondary-menu li {
+  float: left;
+  margin-right: 1em;
+  list-style: none;
+}
+
+#secondary-menu li:before {
+  content: "\e127";
+  margin-right: 0.6em;
+  font-family: 'Glyphicons';
+}
+
+.page-comment h1#page-title {
+  margin: 0;
+  /*padding: 0;*/
 }
