@@ -1539,7 +1539,7 @@ ul.primary li a {
 .navigation ul.links li a {
   padding: 0.6em 1.2em !important;
   text-decoration: none;
-  margin-right: 0.8em;
+  margin-right: 0.2em;
 }
 
 .navigation ul.links li.active a {
@@ -1558,6 +1558,7 @@ ul.primary li a {
   padding: 1em;
   border: 2px solid #EBEBEB;
   border-radius: 4px;
+  margin-bottom: 1em;
 }
 
 .comment .content {
@@ -1625,33 +1626,9 @@ ul.primary li a {
   margin: 1em 0 1em 1em;
 }
 
-/*.block-system {
-  margin-top: 1.5em;
-}
-
-/*#search-block-form {
+#search-block-form .container-inline {
   position: relative;
 }
-
-/*#search-block-form .form-type-textfield input,
-#search-block-form .form-actions input {
-  margin: 0;
-  padding: 1em;
-}
-
-#search-block-form .form-actions {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#search-block-form .form-actions input[type="submit"] {
-  padding: 0;
-  height: 3em;
-  width: 6em;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-} */
 
 #search-block-form input {
   margin: 0;
@@ -1659,27 +1636,31 @@ ul.primary li a {
   width: 100%;
 }
 
-#search-block-form .form-type-textfield input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+#search-block-form .form-actions {
+  position: absolute;
+  right: 0;
 }
 
 #search-block-form .form-actions input {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  text-indent: -999px;
+  background: transparent;
+}
+
+#search-block-form .form-actions:after {
+  content: "\e003";
+  font-family: 'Glyphicons';
+  position: absolute;
+  top: 23%;
+  right: 0.5em;
 }
 
 #search-block-form .form-type-textfield {
   float: left;
   display: inline-block;
   margin: 0;
-  width: 90%;
-}
-
-#search-block-form .form-actions {
-  float: left;
-  display: inline-block;
-  width: 10%;
+  width: 100%;
 }
 
 fieldset {
