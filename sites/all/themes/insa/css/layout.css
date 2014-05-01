@@ -83,8 +83,7 @@
   width: 68%;
 }
 
-#sidebar-first,
-#sidebar-second {
+#sidebar-first {
   margin-right: 1em;
 }
 
@@ -1218,10 +1217,23 @@ div.messages.status li:before {
   top: 13%;
 }
 
+div.messages.warning li:before {
+  content: "\e107";
+  font-family: 'Glyphicons';
+  font-size: 14px;
+  position: absolute;
+  left: 0;
+  top: 13%;
+}
+
 body .messages.warning {
   background-color: #FCF6DA;
   border-color: #FDE8BD;
   color: #8a6d3b;
+}
+
+body .messages.warning li {
+  margin-bottom: 0.1em;
 }
 
 body .messages.error {
@@ -1525,11 +1537,12 @@ ul.primary li a {
 }
 
 .navigation ul.links li {
-  display: inline-block;
+  display: inline-flex;
   background: none;
   list-style-type: none;
   border: none;
-  margin: 0;
+  margin: 0 0 0.2em 0;
+  float: left;
 }
 
 .navigation ul.inline li {
